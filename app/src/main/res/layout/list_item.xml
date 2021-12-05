@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="@color/cardBackgroundColor"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="1dp"
+    android:padding="6dp">
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_marginStart="32dp"
+      android:layout_height="wrap_content">
+
+      <TextView
+          android:id="@+id/lblListItem"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="@string/app_name"
+          android:textAlignment="viewStart"
+          android:layout_centerVertical="true"
+          android:layout_marginHorizontal="6dp"
+          android:layout_toEndOf="@id/imgicon"
+          android:textColor="@color/txtColor1"/>
+
+      <ImageView
+          android:id="@+id/imgicon"
+          android:layout_width="32dp"
+          android:layout_height="32dp"
+          android:layout_centerVertical="true"
+          android:padding="5dp"
+          android:src="@drawable/ic_courses"
+          android:visibility="visible"
+          app:tint="@color/txtColor1" />
+
+  </RelativeLayout>
+
+</RelativeLayout>

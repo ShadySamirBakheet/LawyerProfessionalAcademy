@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.Programme.LiveLectureActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/toolbar_back">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="18dp">
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                style="@style/toolBarTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/goBack"
+                android:text="@string/live_lecture" />
+
+            <ImageView
+                android:id="@+id/goBack"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:padding="15dp"
+                android:src="@drawable/ic_back"
+                app:tint="@color/white" />
+
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/videoLiveCon"
+        android:layout_below="@id/toolbar"
+        app:cardBackgroundColor="@color/cardBackgroundColor"
+        android:layout_marginVertical="4dp"
+        android:layout_marginHorizontal="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/videoCon"
+            android:layout_below="@id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+
+            <com.google.android.exoplayer2.ui.PlayerView
+                android:id="@+id/videoPlayer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"/>
+
+            <ImageView
+                android:id="@+id/videoCaver"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/banner" />
+
+            <ProgressBar
+                android:id="@+id/progressVideo2"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_alignParentBottom="true"
+                android:paddingHorizontal="14dp"
+                android:max="100"
+                android:layout_marginBottom="2.5dp"
+                android:progressBackgroundTint="@android:color/transparent"
+                android:progressTint="@color/boxColor"
+                style="@style/MyProgressBarTwo"/>
+
+            <RelativeLayout
+                android:id="@+id/mediaControls"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="1"
+                android:visibility="visible">
+
+                <com.google.android.material.slider.Slider
+                    android:id="@+id/progressVideo"
+                    style="@style/MyProgressBarTwo"
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="-20dp"
+                    android:max="100"
+                    android:progressBackgroundTint="@color/lineColor"
+                    android:progressTint="@color/boxColor"
+                    android:valueFrom="0.0"
+                    android:valueTo="100.0"
+                    app:thumbRadius="4dp" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_centerInParent="true"
+                    app:cardBackgroundColor="@color/cardBackgroundColor"
+                    app:cardCornerRadius="30dp">
+
+                    <ImageView
+                        android:id="@+id/play_control"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:alpha="1"
+                        android:animateLayoutChanges="true"
+                        android:padding="12dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_play"
+                        app:tint="@color/txtColor3" />
+
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="gone"/>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/messagesList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/messageCon"
+        android:layout_below="@id/videoLiveCon"
+        tools:listitem="@layout/item_text_item_in" />
+
+    <RelativeLayout
+        android:id="@+id/messageCon"
+        android:padding="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_alignParentBottom="true">
+
+        <RelativeLayout
+            android:id="@+id/messageTextCon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="8dp"
+            android:layout_toStartOf="@id/sendCon"
+            android:background="@drawable/message_input"
+            android:padding="12dp"
+            android:visibility="visible">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/messageInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@android:color/transparent"
+                android:hint="@string/type_your_message"
+                android:inputType="text"
+                android:maxHeight="100dp"
+                android:paddingStart="8dp"
+                android:textColor="@color/txtColor1"
+                android:textColorHint="@color/txtColor1" />
+
+        </RelativeLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/sendCon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:cardCornerRadius="20dp"
+            app:cardBackgroundColor="@color/btnColor1"
+            android:layout_centerVertical="true"
+            android:layout_margin="8dp"
+            android:layout_alignParentEnd="true">
+
+            <ImageView
+                android:id="@+id/sendBtn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:clickable="true"
+                android:background="@drawable/btn_app"
+                android:src="@drawable/ic_send"/>
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+</RelativeLayout>

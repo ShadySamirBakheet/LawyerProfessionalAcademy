@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.App.AppSettingsActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/toolbar_back">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginVertical="4dp">
+
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                style="@style/toolBarTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@id/btnNext"
+                android:text="@string/app_settings" />
+
+
+            <ImageView
+                android:id="@+id/btnNext"
+                style="@style/toolBarImage"
+                android:src="@drawable/done_mark"
+                app:tint="@color/white" />
+
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="1dp"
+                android:id="@+id/languageCon">
+
+                <ImageView
+                    android:id="@+id/line1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="8dp"
+                    android:visibility="gone"
+                    android:background="@color/lineColor"/>
+
+
+                <TextView
+                    android:id="@+id/text"
+                    android:layout_below="@id/line1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/txtColor1"
+                    android:padding="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/please_choose_the_language"/>
+
+                <RelativeLayout
+                    android:id="@+id/ArBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/text"
+                    android:padding="12dp">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardAR"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        app:cardBackgroundColor="@color/startColor"
+                        app:cardCornerRadius="25dp">
+
+                        <TextView
+                            style="@style/TextAppearance.AppCompat.Headline"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="AR"
+                            android:textColor="@color/txtColor3"
+                            android:textSize="25dp"
+                            android:textStyle="bold" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@id/cardAR"
+                        android:paddingHorizontal="8dp"
+                        android:text="عربي"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/txtColor1"
+                        android:textSize="18dp" />
+
+                    <ImageView
+                        android:id="@+id/arSelect"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentEnd="true"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_select"
+                        android:visibility="visible"
+                        app:tint="@color/boxColor" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/EnBtn"
+                    android:layout_below="@id/ArBtn"
+                    android:layout_width="match_parent"
+                    android:padding="12dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_height="wrap_content">
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardEn"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        app:cardBackgroundColor="@color/startColor"
+                        app:cardCornerRadius="25dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:textSize="25dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/txtColor3"
+                            style="@style/TextAppearance.AppCompat.Headline"
+                            android:text="EN"/>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="English"
+                        android:paddingHorizontal="8dp"
+                        android:textSize="18dp"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/txtColor1"
+                        android:layout_toEndOf="@id/cardEn"/>
+
+                    <ImageView
+                        android:id="@+id/enSelect"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentEnd="true"
+                        android:padding="10dp"
+                        android:visibility="gone"
+                        android:src="@drawable/ic_select"
+                        app:tint="@color/boxColor" />
+
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="1dp"
+                android:visibility="visible"
+                android:layout_below="@id/languageCon"
+                android:id="@+id/themeCon">
+
+                <TextView
+                    android:id="@+id/texth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/txtColor1"
+                    android:padding="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/please_choose_the_language"/>
+
+                <RelativeLayout
+                    android:id="@+id/lightBtn"
+                    android:layout_below="@id/texth"
+                    android:padding="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardLight"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="25dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_theme"
+                            android:padding="10dp"
+                            app:tint="@color/black" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@id/cardLight"
+                        android:paddingHorizontal="8dp"
+                        android:text="Light Theme"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/txtColor1"
+                        android:textSize="18dp" />
+
+                    <ImageView
+                        android:id="@+id/lightSelect"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:padding="10dp"
+                        android:visibility="visible"
+                        android:src="@drawable/ic_select"
+                        android:layout_alignParentEnd="true"
+                        app:tint="@color/boxColor" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/darkBtn"
+                    android:layout_below="@id/lightBtn"
+                    android:layout_width="match_parent"
+                    android:padding="12dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_height="wrap_content">
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardDark"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        app:cardBackgroundColor="@color/black"
+                        app:cardCornerRadius="25dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_theme"
+                            android:padding="10dp"
+                            app:tint="@color/white" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="Dark Theme"
+                        android:paddingHorizontal="8dp"
+                        android:textSize="18dp"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/txtColor1"
+                        android:layout_toEndOf="@id/cardDark"/>
+
+                    <ImageView
+                        android:id="@+id/darkSelect"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentEnd="true"
+                        android:padding="10dp"
+                        android:visibility="gone"
+                        android:src="@drawable/ic_select"
+                        app:tint="@color/boxColor" />
+
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/line2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_margin="8dp"
+                android:background="@color/lineColor"
+                android:layout_below="@id/themeCon"/>
+
+            <RelativeLayout
+                android:id="@+id/countryCon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding=".5dp"
+                android:layout_below="@id/line2">
+
+                <TextView
+                    android:id="@+id/text3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/txtColor1"
+                    android:padding="8dp"
+                    android:text="@string/please_choose_the_country"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/country_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/text3"
+                    tools:itemCount="2"
+                    android:nestedScrollingEnabled="false"
+                    tools:listitem="@layout/item_country"/>
+
+
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/line3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_margin="8dp"
+                android:visibility="visible"
+                android:background="@color/lineColor"
+                android:layout_below="@id/countryCon"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding=".5dp"
+                android:visibility="visible"
+                android:layout_below="@id/line3">
+
+                <TextView
+                    android:id="@+id/textcu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="@string/please_choose_the_currency"
+                    android:textColor="@color/txtColor1" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/currency_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/textcu"
+                    tools:itemCount="2"
+                    android:nestedScrollingEnabled="false"
+                    tools:listitem="@layout/item_country"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

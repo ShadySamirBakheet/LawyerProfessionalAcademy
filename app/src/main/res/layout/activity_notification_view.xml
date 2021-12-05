@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.Notify.NotificationViewActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/toolbar_back">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="18dp">
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                style="@style/toolBarTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/goBack"
+                android:text="@string/title_notifications" />
+
+            <ImageView
+                android:id="@+id/goBack"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:padding="15dp"
+                android:src="@drawable/ic_back"
+                app:tint="@color/white" />
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_below="@id/subject"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:lineSpacingExtra="8dp"
+                android:padding="8dp"
+                android:text="11 مايو 2021"
+                android:gravity="center_vertical"
+                android:drawablePadding="8dp"
+                android:drawableTint="@color/txtColor4"
+                android:drawableEnd="@drawable/ic_date"
+                android:textColor="@color/txtColor4"
+                android:textSize="13dp" />
+
+            <TextView
+                android:id="@+id/subject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="خطوط جوجل"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/txtColor1"
+                android:padding="8dp"/>
+
+            <TextView
+                android:id="@+id/body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/date"
+                android:padding="8dp"
+                android:text="خطوط ؤ هي مكتبة من 1075 عائلة الخط المرخصة حرة واجهات برمجة التطبيقات لاستخدام الخطوط عبر CSS والروبوت بشكل ملائم. كما نقدم أيقونات مبهجة ومصممة بشكل جميل للإجراءات والعناصر المشتركة. قم بتنزيلها لاستخدامها في منتجاتك الرقمية لأنظمة والويب."
+                android:textColor="@color/txtColor4"
+                android:textSize="16dp" />
+
+            <ImageView
+                android:id="@+id/imgItem"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_below="@id/body"
+                android:padding="8dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/banner2" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:keepScreenOn="true"
+    tools:context=".View.Videos.VideoViewFullActivity">
+
+    <RelativeLayout
+        android:id="@+id/videoCon"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.exoplayer2.ui.PlayerView
+            android:id="@+id/videoPlayer"
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:layout_height="match_parent"/>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone"/>
+
+        <ProgressBar
+            android:id="@+id/progressVideo2"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_alignParentBottom="true"
+            android:paddingHorizontal="14dp"
+            android:max="100"
+            android:layout_marginBottom="2.5dp"
+            android:progressBackgroundTint="@android:color/transparent"
+            android:progressTint="@color/progressColor1"
+            style="@style/MyProgressBarTwo"/>
+
+        <RelativeLayout
+            android:id="@+id/mediaControls"
+            android:alpha="0"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/videoName"
+                android:padding="16dp"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="الحاضرة اﻷولي من برنامج المحامي المصرفي"
+                android:textColor="@color/txtColor1"
+                android:textSize="14dp" />
+
+            <com.google.android.material.slider.Slider
+                android:id="@+id/progressVideo"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                style="@style/MyProgressBarTwo"
+                android:max="100"
+                android:valueFrom="0.0"
+                android:valueTo="100.0"
+                app:thumbRadius="4dp"
+                android:layout_alignParentBottom="true"
+                android:progressBackgroundTint="@color/background"
+                android:progressTint="@color/progressColor1"/>
+
+            <TextView
+                android:id="@+id/timeLeftView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:textColor="@color/txtColor1"
+                android:textSize="12sp"
+                android:padding="4dp"
+                android:layout_margin="12dp"
+                android:background="@color/background"
+                android:text="00:00"/>
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_zoomout"
+                android:padding="12dp"
+                android:id="@+id/zoomIn"
+                android:layout_alignParentEnd="true"
+                android:animateLayoutChanges="true"
+                android:alpha="1"
+                app:tint="@color/txtColor3"/>
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_pause"
+                android:padding="12dp"
+                android:id="@+id/play_control"
+                android:layout_centerInParent="true"
+                android:animateLayoutChanges="true"
+                app:tint="@color/txtColor3"/>
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_next_video"
+                android:padding="12dp"
+                android:id="@+id/playNext"
+                android:layout_marginStart="16dp"
+                android:layout_toEndOf="@id/play_control"
+                android:layout_centerVertical="true"
+                android:animateLayoutChanges="true"
+                android:visibility="gone"
+                app:tint="@color/txtColor3"/>
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_previous_video"
+                android:padding="12dp"
+                android:id="@+id/playPrevious"
+                android:layout_marginEnd="16dp"
+                android:layout_toStartOf="@id/play_control"
+                android:layout_centerVertical="true"
+                android:animateLayoutChanges="true"
+                android:visibility="gone"
+                app:tint="@color/txtColor3"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/con_app"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@color/background"
+    android:layout_margin=".5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            app:cardBackgroundColor="@color/background"
+            android:id="@+id/mainCon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom=".5dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:padding="8dp"
+                android:layout_marginStart="24dp"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/img_down"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:visibility="visible"
+                    android:src="@drawable/ic_down_exg"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    app:tint="@color/txtColor4" />
+
+                <TextView
+                    android:id="@+id/titleItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginHorizontal="6dp"
+                    android:layout_toEndOf="@id/imgicon"
+                    android:text="@string/app_name"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/txtColor1"
+                    android:textSize="18dp" />
+
+                <ImageView
+                    android:id="@+id/imgicon"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:padding="5dp"
+                    android:visibility="visible"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_menu"
+                    app:tint="@color/iconColor" />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/menuSubRView"
+            android:layout_below="@id/mainCon"
+            android:visibility="gone"
+            android:background="@color/background"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

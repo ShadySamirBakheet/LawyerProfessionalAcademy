@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout android:id="@+id/ArBtn"
+    android:layout_below="@id/text"
+    android:padding="12dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin=".5dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardAR"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:cardBackgroundColor="@color/cardBackgroundColor"
+        app:cardCornerRadius="25dp">
+
+        <ImageView
+            android:id="@+id/currencyCode"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:scaleType="centerCrop"
+            android:src="@drawable/egflag"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/currencyName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:text="@string/egypt"
+        android:textSize="18dp"
+        android:paddingHorizontal="8dp"
+        android:textAlignment="viewStart"
+        android:layout_toEndOf="@id/cardAR"/>
+
+    <ImageView
+        android:id="@+id/isSelect"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:padding="10dp"
+        android:src="@drawable/ic_select"
+        app:tint="@color/boxColor"
+        android:layout_alignParentEnd="true"/>
+
+</RelativeLayout>

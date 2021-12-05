@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.Videos.VideoViewActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:background="@drawable/toolbar_back">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="18dp">
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                style="@style/toolBarTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/goBack"
+                android:text="@string/title_notifications" />
+
+            <ImageView
+                android:id="@+id/goBack"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:padding="15dp"
+                android:src="@drawable/ic_back"
+                app:tint="@color/white" />
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <RelativeLayout
+        android:id="@+id/videoCon"
+        android:layout_below="@id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="250dp">
+
+        <com.google.android.exoplayer2.ui.PlayerView
+            android:id="@+id/videoPlayer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"/>
+
+        <ProgressBar
+            android:id="@+id/progressVideo2"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_alignParentBottom="true"
+            android:paddingHorizontal="14dp"
+            android:max="100"
+            android:layout_marginBottom="2.5dp"
+            android:progressBackgroundTint="@android:color/transparent"
+            android:progressTint="@color/progressColor1"
+            style="@style/MyProgressBarTwo"/>
+
+        <RelativeLayout
+            android:id="@+id/mediaControls"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0"
+            android:visibility="visible">
+
+            <com.google.android.material.slider.Slider
+                android:id="@+id/progressVideo"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="-20dp"
+                android:max="100"
+                android:value="50"
+                android:valueFrom="0.0"
+                android:valueTo="100.0"
+                app:thumbRadius="4dp" />
+
+            <TextView
+                android:id="@+id/timeLeftView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="12dp"
+                android:background="@color/background"
+                android:padding="4dp"
+                android:text="00:00"
+                android:textColor="@color/txtColor1"
+                android:textSize="12dp" />
+
+            <ImageView
+                android:id="@+id/zoomIn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:alpha="1"
+                android:animateLayoutChanges="true"
+                android:padding="12dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_zoomin"
+                app:tint="@color/txtColor3" />
+
+            <ImageView
+                android:id="@+id/play_control"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_centerInParent="true"
+                android:alpha="1"
+                android:animateLayoutChanges="true"
+                android:padding="12dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_pause"
+                app:tint="@color/txtColor3" />
+
+            <ImageView
+                android:id="@+id/playNext"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="16dp"
+                android:layout_toEndOf="@id/play_control"
+                android:alpha="1"
+                android:animateLayoutChanges="true"
+                android:padding="12dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_next_video"
+                app:tint="@color/txtColor3" />
+
+            <ImageView
+                android:id="@+id/playPrevious"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="16dp"
+                android:layout_toStartOf="@id/play_control"
+                android:alpha="1"
+                android:animateLayoutChanges="true"
+                android:padding="12dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_previous_video"
+                app:tint="@color/txtColor3" />
+
+        </RelativeLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_below="@id/videoCon"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <RelativeLayout
+                android:id="@+id/videoDescCon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="6dp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/imgCon"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="8dp"
+                    app:cardCornerRadius="25dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/user" />
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/videoName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/imgCon"
+                    android:text="الحاضرة اﻷولي من برنامج المحامي المصرفي"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/txtColor1"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/userName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/videoName"
+                    android:layout_marginTop="4dp"
+                    android:layout_toStartOf="@id/itemDate"
+                    android:layout_toEndOf="@id/imgCon"
+                    android:text="للمستشار / خالد"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/txtColor1"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/itemDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/videoName"
+                    android:layout_alignParentEnd="true"
+                    android:layout_margin="4dp"
+                    android:text="55 مايو 2021"
+                    android:textAlignment="viewEnd"
+                    android:textColor="@color/txtColor4"
+                    android:textSize="12dp" />
+
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/listVideo"
+                android:layout_below="@id/videoDescCon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_video_more" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

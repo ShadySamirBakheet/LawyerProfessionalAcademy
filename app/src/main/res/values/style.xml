@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <style name="toolBarTitle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:gravity">start</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+    <style name="toolBarImage">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_width">40dp</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:layout_alignParentEnd">true</item>
+        <item name="tint">@color/txtColor1</item>
+    </style>
+
+    <style name="btnStyleHome">
+        <item name="android:background">@drawable/btn_app</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:drawableTint" tools:ignore="NewApi">@color/white</item>
+        <item name="android:clickable">true</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:drawablePadding">8dp</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="btnStyleItem">
+        <item name="android:background">@drawable/btn_app</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:drawableTint" tools:ignore="NewApi">@color/white</item>
+        <item name="android:clickable">true</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:drawablePadding">8dp</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="CustomDialog" parent="android:Theme.Dialog">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+
+    <style name="MyProgressBarTwo" parent="@style/Widget.AppCompat.ProgressBar.Horizontal">
+        <item name="android:progressDrawable">@drawable/custom_progressbar_horizontal</item>
+    </style>
+
+    <style name="AlertDialogCustom" parent="Theme.MaterialComponents.Light.Dialog.Bridge">
+        <!-- Used for the buttons -->
+        <item name="colorAccent">@color/toolBarColor</item>
+        <!-- Used for the title and text -->
+        <item name="android:textColorPrimary">#FFFFFF</item>
+        <!-- Used for the background -->
+        <item name="android:background">@color/toolBarColor</item>
+    </style>
+</resources>

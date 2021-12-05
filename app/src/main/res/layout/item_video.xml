@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="1dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/imgItem"
+            android:layout_width="match_parent"
+            android:layout_height="220dp">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="center"
+                android:id="@+id/media_container">
+
+                <ImageView
+                    android:id="@+id/thumbnail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/image6"/>
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_volume_up_grey_24dp"
+                    android:layout_gravity="end|bottom"
+                    android:id="@+id/volume_control"
+                    android:alpha="0"
+                    android:padding="12dp"
+                    android:animateLayoutChanges="true"/>
+
+                <ProgressBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/progressBar"
+                    style="?android:attr/progressBarStyle"
+                    android:progressTint="@color/progressColor1"
+                    android:visibility="gone"
+                    android:layout_gravity="center" />
+
+            </FrameLayout>
+
+            <ProgressBar
+                android:id="@+id/progressVideo"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_alignParentBottom="true"
+                android:max="100"
+                android:progressBackgroundTint="@android:color/transparent"
+                android:progressTint="@color/progressColor1"
+                style="@style/MyProgressBarTwo"/>
+
+            <TextView
+                android:id="@+id/timeLeftView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:textColor="@color/txtColor1"
+                android:textSize="12dp"
+                android:visibility="gone"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginVertical="4dp"
+                android:text="00:00"/>
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_play"
+                android:id="@+id/play_control"
+                android:layout_centerInParent="true"
+                android:animateLayoutChanges="true"
+                android:alpha="0"
+                android:padding="60dp"
+                app:tint="@color/txtColor1"/>
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/youtube"
+                android:id="@+id/play_view"
+                android:layout_centerInParent="true"
+                android:animateLayoutChanges="true"
+                android:alpha="1"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/videoDescCon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imgItem"
+            android:padding="6dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/imgCon"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="8dp"
+                app:cardCornerRadius="25dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/user" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/videoName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/imgCon"
+                android:text="الحاضرة اﻷولي من برنامج المحامي المصرفي"
+                android:textAlignment="viewStart"
+                android:textColor="@color/txtColor1"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/userName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/videoName"
+                android:layout_marginTop="4dp"
+                android:layout_toStartOf="@id/itemDate"
+                android:layout_toEndOf="@id/imgCon"
+                android:text="للمستشار / خالد"
+                android:textAlignment="viewStart"
+                android:textColor="@color/txtColor1"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/itemDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/videoName"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="4dp"
+                android:text="55 مايو 2021"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/txtColor4"
+                android:textSize="12dp" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

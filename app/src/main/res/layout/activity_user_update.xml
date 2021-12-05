@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.LoginSystem.UserUpdateActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/toolbar_back">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="18dp">
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                style="@style/toolBarTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/goBack"
+                android:text="@string/update_profile" />
+
+            <ImageView
+                android:id="@+id/goBack"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:padding="15dp"
+                android:src="@drawable/ic_back"
+                app:tint="@color/white" />
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/toolbar"
+            android:padding="8dp">
+
+            <RelativeLayout
+                android:id="@+id/imgCon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_centerHorizontal="true"
+                    app:cardBackgroundColor="@color/conColor2"
+                    app:cardCornerRadius="40dp">
+
+                    <ImageView
+                        android:id="@+id/userImg"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/banner" />
+
+                </androidx.cardview.widget.CardView>
+
+                <ImageView
+                    android:id="@+id/editImg"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:elevation="5dp"
+                    android:padding="20dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentBottom="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_edit"
+                    app:tint="@color/txtColor2" />
+
+                <TextView
+                    android:id="@+id/editTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:elevation="5dp"
+                    android:padding="4dp"
+                    android:text="@string/edit"
+                    android:textSize="16dp"
+                    android:textColor="@color/txtColor2"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentBottom="true"/>
+
+            </RelativeLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/nameLay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/enter_your_name"
+                android:layout_below="@id/imgCon"
+                android:textColorHint="@color/txtColor1"
+                app:hintTextColor="@color/txtColor1"
+                android:layout_margin="8dp"
+                app:boxStrokeColor="@color/inputBoxColor"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/userName"
+                    android:layout_width="match_parent"
+                    android:textSize="14sp"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/txtColor1"
+                    android:layout_height="wrap_content"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/emailLay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/nameLay"
+                android:hint="@string/enter_your_e_mail"
+                android:textColorHint="@color/txtColor1"
+                app:hintTextColor="@color/txtColor1"
+                app:boxStrokeWidth="1dp"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                app:boxStrokeColor="@color/inputBoxColor"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/email"
+                    android:layout_width="match_parent"
+                    android:textSize="14sp"
+                    android:inputType="textEmailAddress"
+                    android:textColor="@color/txtColor1"
+                    android:layout_height="wrap_content"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/phoneLay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/emailLay"
+                android:hint="@string/enter_your_phone"
+                android:textColorHint="@color/txtColor1"
+                app:hintTextColor="@color/txtColor1"
+                app:boxStrokeWidth="1dp"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                app:boxStrokeColor="@color/inputBoxColor"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/phone"
+                    android:layout_width="match_parent"
+                    android:textSize="14sp"
+                    android:inputType="phone"
+                    android:textColor="@color/txtColor1"
+                    android:layout_height="wrap_content"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/addressLay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/phoneLay"
+                android:hint="@string/enter_your_address"
+                android:textColorHint="@color/txtColor1"
+                app:hintTextColor="@color/txtColor1"
+                android:layout_margin="8dp"
+                app:boxStrokeColor="@color/inputBoxColor"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/address"
+                    android:layout_width="match_parent"
+                    android:textSize="14sp"
+                    android:inputType="text"
+                    app:boxStrokeColor="@color/inputBoxColor"
+                    android:textColor="@color/txtColor1"
+                    android:layout_height="wrap_content"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <TextView
+                android:id="@+id/btnSubmit"
+                style="@style/btnStyleHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/addressLay"
+                android:layout_centerHorizontal="true"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginVertical="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_app"
+                android:text="@string/save"
+                android:textSize="17dp" />
+
+            <TextView
+                android:id="@+id/btnChangePassword"
+                style="@style/btnStyleHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnSubmit"
+                android:layout_centerHorizontal="true"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginVertical="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_app"
+                android:text="@string/change_password"
+                android:textSize="17dp" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
