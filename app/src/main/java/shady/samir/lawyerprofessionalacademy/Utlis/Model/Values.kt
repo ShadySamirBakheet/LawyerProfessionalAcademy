@@ -11,7 +11,7 @@ class Values {
 
         //
         var ContentType = "application/json"
-        var FCMKEY = "key=AAAAyZqQqQc:APA91bG7ZLTUJ_NSvMsWJ76Pvv3DlNLUdbP1KGq8FGLrhyf3zZVgvdXUQ-V7OdaRSuCNzA6h2-yV8Vej9MjIk90Q8CkMEFhePjuPau4RSkUA4PWEKlBBN-NwcUoyHfFVtxt6dE0iVnsg"
+        var FCMKEY = "key=Your_Key_Here"
 
         var TAG = "lawyerprofessionalacademytag"
 
